@@ -28,8 +28,30 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: 'sandbox9a1ca231ecf541ecbbbcb2c36bd24f57.mailgun.org',
+    authentication: 'plain',
+    user_name: ENV['MAILGUN_USER_NAME'],
+    password: ENV['MAILGUN_PASSWORD']
+  }
+
+  #
+  # Settings for Gmail
+  #
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.gmail.com',
+  #   port: 587,
+  #   enable_starttls_auto: true,
+  #   authentication: 'plain',
+  #   user_name: ENV['GMAIL_USER_NAME'],
+  #   password: ENV['GMAIL_PASSWORD']
+  # }
+
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
