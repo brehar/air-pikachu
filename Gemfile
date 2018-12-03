@@ -15,6 +15,9 @@ gem 'sqlite3'
 gem 'toastr-rails', '~> 1.0'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-facebook', '~> 4.0'
+
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5'
